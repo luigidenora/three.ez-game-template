@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>GAME</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <script type="module">
+      import { setupPWA } from "./pwa.js";
+      setupPWA();
+    </script>
+  </head>
+
+  <body class="body-loading">
+    <div class="loading-container">
+      <div class="progress-container">
+        <div class="progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+      <div class="loading-message" id="loadingMessage"></div>
+      <!-- Link to the external minified JavaScript file -->
+      <script src="loading-messages.min.js"></script>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <div
+      id="devPanel"
+      style="
+        position: absolute;
+        bottom: 0;
+        color: yellow;
+        background: var(--bg);
+      "
+    ></div>
+    <button id="fullscreen-button">
+      <i class="fas fa-expand"></i>
+    </button>
+    <script src="fullscreen-toggle.min.js"></script>
+  </body>
+</html>
